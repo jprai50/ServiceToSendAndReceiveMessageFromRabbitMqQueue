@@ -1,0 +1,58 @@
+<html>
+<title> Lets Test Accessibility</title>
+<body>
+<div class="jai" >
+<a href="www.verizon.com"  tabindex="0" > Verizon Home Page </a>
+
+</div>
+
+<p></p>
+<br/></br>
+<div>
+<button aria-label="button menu list"> Covid19</button>
+<p></p>
+<br/></br>
+<span role="link" class="link" tabindex="0" data-href="https://deque.com">Deque Systems</span>
+</div>
+
+<img class="border" src="C:\Users\v835435\Downloads\bar-chart.png" width="546" height="330" 
+
+aria-describedby="description-extended" tabindex="0">
+
+<div id="description-extended">
+    <p class="visually-hidden" tabindex="0">Full long description goes here.</p>
+</div>
+	
+	
+	
+</body>
+
+
+ <style>
+    .visually-hidden {
+      position: absolute;
+      clip: rect(0 0 0 0);
+      border: 0;
+      height: 1px; margin: -1px;
+      overflow: hidden;
+      padding: 0
+      width: 1px;
+      white-space: nowrap;
+    }
+    li.current-page {
+      outline: 1px solid red;
+    }
+  </style>
+  
+  
+<script>
+document.querySelector('.link').addEventListener('click', navigateLink);
+document.querySelector('.link').addEventListener('keyup', navigateLink);
+function navigateLink(){
+if(event.type ==="click" || event.keyCode === 13 || event.keyCode === 32){
+window.location.href=document.querySelector('.link').getAttribute('data-href');
+}
+}
+
+</script>
+</html>
